@@ -43,64 +43,140 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
-
+  unsigned int mean, max, min, median;
  
   /* Statistics and Printing Functions Go Here */
+  max = find_maximum(&test, SIZE);
+  min = find_minimum(&test, SIZE);
+  quicksort(&test, 0, SIZE-1);
+  median = find_median(&test, SIZE);
+  mean = find_mean(&test, SIZE);
 
 
+  printf("Maximum Value: ");
+  print_statistics(&max);
+  printf("\n\r");
+
+  printf("Minimum Value: ");
+  print_statistics(&min);
+  printf("\n\r");
+
+  printf("Median Value: ");
+  print_statistics(&median);
+  printf("\n\r");
+
+  printf("Mean Value: ");
+  print_statistics(&mean);
+  printf("\n\r");
 }
 
 /* Add other Implementation File Code Here */
+
+
 void swap(unsigned char* a, unsigned char* b){
+    unsigned char temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
 
 }
 
 int partition(unsigned char* arr, int low, int high){
+    int pivot = arr[high];
+    int i = low - 1;
 
+    for(int j=low;j<=high-1;j++){
+        if(arr[j] <= pivot)
+        {
+            i += 1;
+            swap(&arr[i],&arr[j]);
+        }
+    }
+
+    swap(&arr[i+1],&arr[high]);
+    return i+1;
 
 
 }
 
 void quicksort( unsigned char *arr,int low, unsigned int high){
+    if(low < high){
+        int p = partition(arr,low, high);
+        quicksort(arr,low, p - 1);
+        quicksort(arr, p+1, high);
 
+
+    }
 }
 
 void reverseArray(unsigned char *arr, unsigned int len){
-
+    unsigned char arr2[len];
+    for(unsigned int i=0;i<len;i++){
+        arr2[i] = arr[len-i-1];
+    }
+    for(unsigned int i=0;i<len;i++){
+        arr[i] = arr2[i];
+    }
 }
 
-
+    
 void print_statistics(int* stat)
 {
-
+    if (!stat) { printf("stat is NULL\n"); return; }
+    printf("%d\n", *stat);
+}
 
 
 void print_array(unsigned char* array, unsigned int len)
 {
-   
+    for(unsigned int i=0;i<len;i++ ){
+      printf("%c ",array[i]);
+    }
+    printf("\n\r");
 }
 
 
 unsigned char find_median(unsigned char* array, unsigned int len){
-
-    
+    if(len%2==0){
+      return array[len/2];
+    }
+    else if(len%2!=0){
+      return array[(len+1)/2];
+    }
 }
 
 
 
 unsigned int find_mean(unsigned char* array, unsigned int len){
-
+    unsigned int sum = 0;
+    for(unsigned int i=0;i<len;i++){
+      sum += array[i];
+    }
+    return sum/len;
 }
 
 
 unsigned int find_maximum(unsigned char* array, unsigned int len){
-
+    unsigned int max = array[0];
+    for(unsigned int i=1;i<len;i++){
+      if(max <= array[i]){
+        max = array[i];
+      }
+    }
+    return max;
 }
 
 
 unsigned int find_minimum(unsigned char* array, unsigned int len){
- 
+   unsigned int min = array[0];
+    for(unsigned int i=1;i<len;i++){
+      if(min > (unsigned int)array[i]){
+        min = (unsigned int)array[i];
+      }
+    }
+    return min;
 }
+
 
 
 
