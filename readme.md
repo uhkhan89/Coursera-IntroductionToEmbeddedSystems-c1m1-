@@ -1,3 +1,5 @@
+My name is Umair Hafeez Khan
+
 I tried doing the first assignment for the coursera course "Introduction to Embedded Systems software and Development environments"
 
 This code attempts to implement basic functionality regarding statistics of provided data.
