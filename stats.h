@@ -22,6 +22,15 @@
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
+void print_statistics(int* stat);
+void print_array(unsigned char* array, unsigned int len);
+unsigned char find_median(unsigned char* array, unsigned int len);
+unsigned int find_mean(unsigned char* array, unsigned int len);
+unsigned int find_maximum(unsigned char* array, unsigned int len);
+unsigned int find_minimum(unsigned char* array, unsigned int len);
+void sort_array(unsigned char* array, unsigned int len);
+
+
 
 /**
  * @brief <Add Brief Description of Function Here>

@@ -9,13 +9,13 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file Assignment 1 
+ * @brief: We have been asked to make statistics related functions
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Umair Hafeez Khan
+ * @date 5-02-2026
  *
  */
 
@@ -24,8 +24,15 @@
 #include <stdio.h>
 #include "stats.h"
 
+
 /* Size of the Data Set */
 #define SIZE (40)
+
+
+
+
+
+
 
 void main() {
 
@@ -36,8 +43,65 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+
+ 
   /* Statistics and Printing Functions Go Here */
+
 
 }
 
 /* Add other Implementation File Code Here */
+void swap(unsigned char* a, unsigned char* b){
+
+}
+
+int partition(unsigned char* arr, int low, int high){
+
+
+
+}
+
+void quicksort( unsigned char *arr,int low, unsigned int high){
+
+}
+
+void reverseArray(unsigned char *arr, unsigned int len){
+
+}
+
+
+void print_statistics(int* stat)
+{
+
+
+
+void print_array(unsigned char* array, unsigned int len)
+{
+   
+}
+
+
+unsigned char find_median(unsigned char* array, unsigned int len){
+
+    
+}
+
+
+
+unsigned int find_mean(unsigned char* array, unsigned int len){
+
+}
+
+
+unsigned int find_maximum(unsigned char* array, unsigned int len){
+
+}
+
+
+unsigned int find_minimum(unsigned char* array, unsigned int len){
+ 
+}
+
+
+
+
