@@ -72,7 +72,7 @@ void main() {
 
 /* Add other Implementation File Code Here */
 
-
+// This function accepts pointers to characters a and b, and swaps them
 void swap(unsigned char* a, unsigned char* b){
     unsigned char temp;
     temp = *a;
@@ -80,7 +80,7 @@ void swap(unsigned char* a, unsigned char* b){
     *b = temp;
 
 }
-
+// this function creates a partition of the provided array for quicksort
 int partition(unsigned char* arr, int low, int high){
     int pivot = arr[high];
     int i = low - 1;
@@ -98,7 +98,7 @@ int partition(unsigned char* arr, int low, int high){
 
 
 }
-
+    // this function performs the actual quicksort algorithm
 void quicksort( unsigned char *arr,int low, unsigned int high){
     if(low < high){
         int p = partition(arr,low, high);
@@ -108,7 +108,7 @@ void quicksort( unsigned char *arr,int low, unsigned int high){
 
     }
 }
-
+  // This is for reversing the array
 void reverseArray(unsigned char *arr, unsigned int len){
     unsigned char arr2[len];
     for(unsigned int i=0;i<len;i++){
@@ -119,7 +119,7 @@ void reverseArray(unsigned char *arr, unsigned int len){
     }
 }
 
-    
+    // This function prints the provided the statistic
 void print_statistics(int* stat)
 {
     if (!stat) { printf("stat is NULL\n"); return; }
@@ -127,6 +127,7 @@ void print_statistics(int* stat)
 }
 
 
+// This function prints the array
 void print_array(unsigned char* array, unsigned int len)
 {
     for(unsigned int i=0;i<len;i++ ){
@@ -135,7 +136,7 @@ void print_array(unsigned char* array, unsigned int len)
     printf("\n\r");
 }
 
-
+    // This function finds the median from the array
 unsigned char find_median(unsigned char* array, unsigned int len){
     if(len%2==0){
       return array[len/2];
@@ -146,6 +147,7 @@ unsigned char find_median(unsigned char* array, unsigned int len){
 }
 
 
+// This function finds the mean of the array
 
 unsigned int find_mean(unsigned char* array, unsigned int len){
     unsigned int sum = 0;
@@ -155,7 +157,7 @@ unsigned int find_mean(unsigned char* array, unsigned int len){
     return sum/len;
 }
 
-
+ // This function finds the maximum of the array
 unsigned int find_maximum(unsigned char* array, unsigned int len){
     unsigned int max = array[0];
     for(unsigned int i=1;i<len;i++){
@@ -166,7 +168,7 @@ unsigned int find_maximum(unsigned char* array, unsigned int len){
     return max;
 }
 
-
+// This function finds the minimum from the provided array
 unsigned int find_minimum(unsigned char* array, unsigned int len){
    unsigned int min = array[0];
     for(unsigned int i=1;i<len;i++){
